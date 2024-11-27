@@ -26,31 +26,55 @@ public class collision
     }
 		public void Update()
         {
-            Window.ClearBackground(Color.Gray);
+        //write score
+        Vector2 textPosition = new Vector2(10, 10);
+        Vector2 textSize = new Vector2(100, 30);
+        Text.Draw("Score: 0", textPosition);
 
-            // draw platform
-            Draw.LineSize = 2;
-            Draw.FillColor = Color.Black;
-            Draw.Rectangle(0, 400, 800, 600);
-            //draw objects
-            Draw.FillColor = Color.Yellow;
-            Draw.LineSize = 2;
-            Draw.Circle(40, 360, 40);
-            //platform collision
+        // draw platform
+        Draw.LineSize = 2;
+        Draw.FillColor = Color.Black;
+        Draw.Rectangle(0, 400, 800, 600);
+        //draw objects
+        Draw.FillColor = Color.Yellow;
+        Draw.LineSize = 2;
+        Draw.Circle(point, radius);
+        //draw obstacle
+        Draw.FillColor = Color.Red;
+        Draw.LineSize = 2;
+        Draw.Square(obstaclePosition, 50);
 
-            //convert position and size to edges
-            float leftEdge = position.X;
-            float rightEdge = position.X + size.X;
-            float topEdge = position.Y;
-            float bottomEdge = position.Y + size.Y;
-            //collision check
-            bool isAboveX = point.X > leftEdge && point.X < topEdge;
-            bool isAboveY = point.Y > rightEdge && point.Y < topEdge;
-            bool isAboveRectangle = isAboveX && isAboveY;
+        speed += gravity * Time.DeltaTime;
+        point += speed * 7 * Time.DeltaTime;
 
-
-
+        obstacleSpeed += obstacleGravity * Time.DeltaTime;
+        obstaclePosition += obstacleSpeed * Time.DeltaTime;
+        //user input
+        if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+        {
+            speed.Y -= 10;
         }
+        //platform collision
+        //convert position and size to edges
+        float leftEdge = position.X;
+        float rightEdge = position.X + size.X;
+        float topEdge = position.Y;
+        float bottomEdge = position.Y + size.Y;
+        //collision check
+
+        bool isPointInRectangle = (point.X >= leftEdge && point.X <= rightEdge &&
+                       point.Y >= topEdge && point.Y <= bottomEdge);
+
+        // calculate the distance from the circle's center to this point
+        float distanceX = position.X;
+        float distanceY = position.Y;
+
+        // check for collision
+        bool isCircleCollidingWithRectangle = (distanceX * distanceX + distanceY * distanceY) <= (radius * radius);
+
+
+
+    }
 
     }
 }
