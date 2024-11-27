@@ -2,12 +2,9 @@
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 
-public class collision
-{
+
 	public class collision()
-	{
-		public void Colllsion()
-		{ Vector2 position = new Vector2(0, 400);
+	{       Vector2 position = new Vector2(0, 400);
             Vector2 size = new Vector2(800, 200);
             Vector2 point = new Vector2(40, 360);
             float radius = 40;
@@ -17,7 +14,9 @@ public class collision
             Vector2 obstacleSpeed = new Vector2(-50, 0);
             Vector2 obstacleGravity = new Vector2(0, 0);
             public static bool End = false;
-		}
+		public void Colllsion()
+		{ 
+		}   
 		public void Setup()
 		{
             
@@ -77,4 +76,4 @@ public class collision
     }
 
     }
-}
+
