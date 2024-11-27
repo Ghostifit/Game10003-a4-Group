@@ -11,7 +11,7 @@ namespace Game10003
     public class Game
     {
         // Place your variables here:
-
+        collision collision = new collision();
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -26,7 +26,8 @@ namespace Game10003
         ///     Update runs every frame.
         /// </summary>
         public void Update()
-        {
+        { 
+           
 
         }
     }
