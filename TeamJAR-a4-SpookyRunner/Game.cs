@@ -20,14 +20,15 @@ namespace Game10003
         {
             Window.SetSize(800, 600);
             Window.SetTitle("Spooky Runner");
+            
         }
 
         /// <summary>
         ///     Update runs every frame.
         /// </summary>
         public void Update()
-        { 
-             
+        {   Window.ClearBackground(Color.Gray);
+                collision.Update();  
 
         }
     }

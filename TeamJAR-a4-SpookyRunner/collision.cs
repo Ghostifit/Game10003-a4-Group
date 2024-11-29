@@ -3,28 +3,29 @@ using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 
 
-	public class collision()
-	{       Vector2 position = new Vector2(0, 400);
-            Vector2 size = new Vector2(800, 200);
-            Vector2 point = new Vector2(40, 360);
-            float radius = 40;
-            Vector2 gravity = new Vector2(0, 10);
-            Vector2 speed = new Vector2(0, 0);
-            Vector2 obstaclePosition = new Vector2(650, 350);
-            Vector2 obstacleSpeed = new Vector2(-50, 0);
-            Vector2 obstacleGravity = new Vector2(0, 0);
-            public static bool End = false;
-		public void Colllsion()
-		{ 
-		}   
-		public void Setup()
-		{
-            
-        Window.TargetFPS = 60;
-            Window.SetSize(800, 600);
+public class collision
+{
+    Vector2 position = new Vector2(0, 400);
+    Vector2 size = new Vector2(800, 200);
+    Vector2 point = new Vector2(40, 360);
+    float radius = 40;
+    Vector2 gravity = new Vector2(0, 10);
+    Vector2 speed = new Vector2(0, 0);
+    Vector2 obstaclePosition = new Vector2(650, 350);
+    Vector2 obstacleSpeed = new Vector2(-50, 0);
+    Vector2 obstacleGravity = new Vector2(0, 0);
+    public static bool End = false;
+    public void Colllsion()
+    {
     }
-		public void Update()
-        {
+    public void Setup()
+    {
+
+        Window.TargetFPS = 60;
+        Window.SetSize(800, 600);
+    }
+    public void Update()
+    {
         //write score
         Vector2 textPosition = new Vector2(10, 10);
         Vector2 textSize = new Vector2(100, 30);
@@ -68,12 +69,10 @@ using System.Security.Cryptography.X509Certificates;
         float distanceX = position.X;
         float distanceY = position.Y;
 
-        // check for collision
-        bool isCircleCollidingWithRectangle = (distanceX * distanceX + distanceY * distanceY) <= (radius * radius);
 
 
 
     }
 
-    }
+}
 
