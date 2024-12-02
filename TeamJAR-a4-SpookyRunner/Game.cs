@@ -1,6 +1,7 @@
 ﻿// Include code libraries you need below (use the namespace).
 using System;
 using System.Numerics;
+using TeamJAR_a4_SpookyRunner.Game10003;
 
 // The namespace your code is in.
 namespace Game10003
@@ -11,7 +12,7 @@ namespace Game10003
     public class Game
     {
         // Place your variables here:
-
+        CustomSound soundClass;
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -20,6 +21,9 @@ namespace Game10003
         {
             Window.SetSize(800, 600);
             Window.SetTitle("Spooky Runner");
+
+            soundClass = new CustomSound();
+            soundClass.setup();
         }
 
         /// <summary>

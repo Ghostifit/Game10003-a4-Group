@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TeamJAR_a4_SpookyRunner.Game10003
 {
-    public class sound
+    public class CustomSound
     {
         Music myMusic;
         Sound JumpSound;
@@ -15,7 +15,7 @@ namespace TeamJAR_a4_SpookyRunner.Game10003
         Sound BatSound;
 
 
-        void setup()
+        public void setup()
         {
             //Audio for background music
             myMusic = Audio.LoadMusic("../../../SoundAssets/BackgroundMusic.mp3");
