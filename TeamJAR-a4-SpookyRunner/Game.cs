@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Numerics;
 using System.Text.RegularExpressions;
+using TeamJAR_a4_SpookyRunner;
 
 // The namespace your code is in.
 namespace Game10003
@@ -14,8 +15,7 @@ namespace Game10003
     {
         // Place your variables here:
         collision collision = new collision();
-        string dir = System.IO.Directory.GetCurrentDirectory();
-        Texture2D moon;
+        sprites sprites = new sprites();
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -24,7 +24,7 @@ namespace Game10003
         {    
             Window.SetSize(800, 600);
             Window.SetTitle("Spooky Runner");
-            moon = Graphics.LoadTexture("../../../Sprites/Moon.png");
+            sprites.Setup();
         }
 
         /// <summary>
@@ -33,8 +33,7 @@ namespace Game10003
         public void Update()
         {   Window.ClearBackground(Color.Gray);
             collision.Update();
-            Graphics.Scale = 1;
-            Graphics.Draw(moon, 500, 0);
+            sprites.Update();
         }
     }
 }
