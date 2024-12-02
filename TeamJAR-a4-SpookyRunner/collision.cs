@@ -50,9 +50,9 @@ public class collision
         obstacleSpeed += obstacleGravity * Time.DeltaTime;
         obstaclePosition += obstacleSpeed * Time.DeltaTime;
         //user input
-        if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+        if (Input.IsKeyboardKeyPressed(KeyboardInput.Space))
         {
-            speed.Y -= 10;
+            speed.Y -= 25;
         }
         //platform collision
         //convert position and size to edges
