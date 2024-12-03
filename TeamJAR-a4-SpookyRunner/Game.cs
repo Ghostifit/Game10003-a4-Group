@@ -14,6 +14,9 @@ namespace Game10003
         // Place your variables here:
         CustomSound soundClass;
 
+        collision collision = new collision();
+        sprites sprites = new sprites();
+
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
@@ -24,6 +27,8 @@ namespace Game10003
 
             soundClass = new CustomSound();
             soundClass.setup();
+
+            sprites.Setup();
         }
 
         /// <summary>
